@@ -521,7 +521,7 @@ a {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-text-blackblack);
+    background-color: var(--color-text-black);
     transform: translateX(100%);
     transition: 0.3s;
 }
