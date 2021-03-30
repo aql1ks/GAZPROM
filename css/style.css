@@ -61,6 +61,10 @@ a {
 }
 
 .burger {
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,6 +80,7 @@ a {
     height: 3px;
     height: 2px;
     background-color: var(--color-white);
+    transition: 0.3s;
 }
 
 .burger span::before, .burger span::after {
@@ -87,10 +92,23 @@ a {
     height: 3px;
     background-color: inherit;
     transform: translateY(-7px);
+    transition: 0.3s;
 }
 
 .burger span::after {
     transform: translateY(7px);
+}
+
+.burger.is-active span {
+    height: 0;
+}
+
+.burger.is-active span::before {
+    transform: rotate(45deg);
+}
+
+.burger.is-active span::after {
+    transform: rotate(-45deg);
 }
 
 .hero {
@@ -492,6 +510,36 @@ a {
     font-size: 16px;
     line-height: 22px;
     color: var(--color-white);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-text-blackblack);
+    transform: translateX(100%);
+    transition: 0.3s;
+}
+
+.nav.is-active {
+    transform: translateX(0);
+}
+
+.nav__item {
+    margin-bottom: 20px;
+}
+
+.nav__link {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color-white);
+
 }
 
 @media screen and (max-width: 576px) {
